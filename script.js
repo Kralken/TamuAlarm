@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentDateEl.textContent = formattedDate;
 
         if (powerOn) {
-            let remainingMinutes = 15 - (minutes % 15) - 1;
+            let remainingMinutes = 20 - (minutes % 20) - 1;
             let remainingSeconds = 60 - seconds;
             if (remainingSeconds === 60) {
                 remainingMinutes += 1;
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             remainingTimeEl.textContent = remainingTimeText;
             document.title = `${remainingTimeText} | HAROLD WEB APP`;
 
-            if ([0, 15, 30, 45].includes(minutes) && seconds === 0 && lastAlarmMinute !== minutes) {
+            if ([0, 20, 40].includes(minutes) && seconds === 0 && lastAlarmMinute !== minutes) {
                 alarmSound.play();
                 lastAlarmMinute = minutes;
                 updateAlarmButtonState(true); // Ensure button state updates when alarm starts automatically
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const now = new Date();
             const minutes = now.getMinutes();
             const seconds = now.getSeconds();
-            if ([0, 15, 30, 45].includes(minutes) && seconds === 0 && lastAlarmMinute !== minutes) {
+            if ([0, 20, 40].includes(minutes) && seconds === 0 && lastAlarmMinute !== minutes) {
                 alarmSound.play();
                 lastAlarmMinute = minutes;
                 updateAlarmButtonState(true); // Ensure button state updates when alarm starts automatically
